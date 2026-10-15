@@ -38,7 +38,7 @@ Changes to memory, disk, and CPU apply when each server restarts.
 
 ## Installing
 
-Upload `server-splitter-1.0.0.pteroext` in **Admin → Extensions**, or from the Panel root:
+Download [`server-splitter-1.0.0.pteroext`](https://github.com/LeonardoRRC/server-splitter/releases/download/v1.0.0/server-splitter-1.0.0.pteroext) from the [latest release](https://github.com/LeonardoRRC/server-splitter/releases/latest), then upload it in **Admin → Extensions**, or install it from the Panel root:
 
 ```bash
 php artisan p:extension:install server-splitter-1.0.0.pteroext --enable

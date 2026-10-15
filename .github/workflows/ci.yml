@@ -1,0 +1,27 @@
+name: Extension CI
+on: [push, pull_request]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: panel/extensions/server-splitter
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: pterodactyl/panel
+          ref: 2.0-develop
+          path: panel
+      - uses: actions/checkout@v4
+        with:
+          path: panel/extensions/server-splitter
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build the Pterodactyl SDK
+        working-directory: panel
+        run: npm ci && npm run sdk:generate && npm run sdk:testing
+      - run: npm install
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
