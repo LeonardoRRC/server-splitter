@@ -1,0 +1,46 @@
+{
+    "$schema": "./node_modules/@pterodactyl/sdk/manifest.schema.json",
+    "id": "server-splitter",
+    "name": "Server Splitter",
+    "version": "1.0.0",
+    "requires": {
+        "panel": "^2.0.0-dev",
+        "sdk": "^2.0.0-beta.4",
+        "php": "^8.3"
+    },
+    "description": "Let users split a server's memory, disk, and CPU into sub-servers, with allowed eggs, limits, and ports set from the admin area.",
+    "author": "The Quantum Development",
+    "icon": "git-fork",
+    "provider": "UK\\TheQuantum\\ServerSplitter\\ServerSplitterProvider",
+    "autoload": {
+        "UK\\TheQuantum\\ServerSplitter\\": "src"
+    },
+    "ui": {
+        "entry": "dist/client.js",
+        "mode": "native",
+        "prefix": "ss",
+        "screens": [
+            {
+                "id": "split",
+                "area": "server",
+                "path": "split",
+                "permission": [
+                    "ext.server-splitter.read"
+                ],
+                "nav": {
+                    "label": "Server Split",
+                    "icon": "git-fork"
+                }
+            },
+            {
+                "id": "settings",
+                "area": "admin",
+                "path": "server-splitter",
+                "nav": {
+                    "label": "Server Splitter",
+                    "icon": "git-fork"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "uk.thequantum/server-splitter",
+    "description": "Split a server's memory, disk, and CPU into sub-servers.",
+    "autoload": {
+        "psr-4": {
+            "UK\\TheQuantum\\ServerSplitter\\": "src/"
+        }
+    },
+    "config": {
+        "autoloader-suffix": "ServerSplitterExtension"
+    },
+    "authors": [
+        {
+            "name": "The Quantum Development"
+        }
+    ]
+}
